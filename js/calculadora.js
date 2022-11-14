@@ -18,33 +18,33 @@ window.addEventListener ('load',()=> {/* Escuchamos cuando se carga el documento
 })
 
 function calculadora(button, display) {
-    switch (button.innerhtml) {
+    switch (button.innerHTML) {
         case 'c':
-            borrar(display);
+            return borrar(display);
             break;
 
             case '=':
-                calculadora(display);
+                return calcular(display);
                 break;
 
                 default:
-                    actualizar(display, button);
+                    return actualizar(display, button);
                     break;
     }
 }
 
 function calcular (display) {
-    displey.innerhtml = eval(display.innerhtml) /* tomar el string, resolverlo y guardarlo en el innerhtml del display */ 
+    display.innerHTML = eval(display.innerHTML) /* tomar el string, resolverlo y guardarlo en el innerhtml del display */ 
 }
 
 function actualizar(display, button) {
-    if (display.innerhtml == 0) {
-       display.innerhtml = '';
+    if (display.innerHTML == 0) {
+       display.innerHTML = '';
     }
-    display.innerhtml += button.innerhtml;
+    display.innerHTML += button.innerHTML;
     /* displey.innerhtml = displey.innerhtml + button.innerhtml */
 }
 
 function borrar(display) {
-    display.innerhtml = 0;
+    display.innerHTML = 0;
 }
